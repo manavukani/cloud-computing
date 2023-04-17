@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../templates/style.css">
+    <style>
+        /* Center the page content */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Style the header */
+        h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Style the form */
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f0f0f0;
+            padding: 2rem;
+            border-radius: 10px;
+        }
+
+        /* Style the label and input */
+        label {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        input[type="text"] {
+            padding: 0.5rem;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 5px;
+            width: 100%;
+            margin-bottom: 2rem;
+        }
+
+        /* Style the submit button */
+        button[type="submit"] {
+            padding: 0.8rem 2rem;
+            font-size: 1.2rem;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #3e8e41;
+        }
+        .main{
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div class="main">
+        <div class="heading">
+            <h1>Question Quality Prediction</h1>
+        </div>
+        <div class="box">
+            <form action="/predict" method="POST">
+                <label for="que">Question: </label>
+                <input type="text" id="que" name="que"><br>
+                <!-- <div class="pred" >
+                    {% if prediction %}
+                    <div class="prediction" style="color:black">
+                        <strong>{{ prediction }}</strong>
+                    </div>
+                    {% endif %}
+                    <br><br>
+                </div> -->
+                <button type="submit">Submit</button>
+            </form>
+            {% block content %}
+            {% endblock %}
+        </div>
+        
+    </div>
+</body>
+<script>
+    
+</script>
+</html>
